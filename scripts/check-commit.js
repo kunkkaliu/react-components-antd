@@ -15,7 +15,9 @@ function exitProcess(code = 1) {
 }
 
 async function checkVersion() {
-  const { versions } = await fetch('http://registry.npmjs.org/react-ant').then(res => res.json());
+  const { versions = {} } = await fetch('http://registry.npmjs.org/react-ant').then(res =>
+    res.json(),
+  );
   if (version in versions) {
     console.log(chalk.yellow('😈 Current version already exists. Forget update package.json?'));
     console.log(chalk.cyan(' => Current:'), version);
@@ -43,9 +45,7 @@ async function checkCommit({ files }) {
 async function checkRemote() {
   const { remote } = await git.fetch('origin', 'master');
   if (remote.indexOf('kunkkaliu/react-ant') === -1) {
-    console.log(
-      chalk.yellow('😓 Your remote origin is not kunkkaliu/react-ant, did you fork it?'),
-    );
+    console.log(chalk.yellow('😓 Your remote origin is not kunkkaliu/react-ant, did you fork it?'));
     exitProcess();
   }
 }
