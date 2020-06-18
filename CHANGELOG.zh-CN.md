@@ -1014,7 +1014,7 @@ timeline: true
 
 `2019-04-01`
 
-- 🐞 修复 `antd.less` 丢失的问题。[#15790](https://github.com/ant-design/ant-design/issues/15790)
+- 🐞 修复 `react-ant.less` 丢失的问题。[#15790](https://github.com/ant-design/ant-design/issues/15790)
 
 ## 3.16.0
 

@@ -66,7 +66,7 @@ const App = () => (
 引入样式：
 
 ```jsx
-import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+import 'antd/dist/antd.css'; // or 'antd/dist/react-ant.less'
 ````
 
 你也可以使用 [babel-plugin-import](https://ant.design/docs/react/getting-started-cn#按需加载)。

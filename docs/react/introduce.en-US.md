@@ -82,7 +82,7 @@ ReactDOM.render(<DatePicker />, mountNode);
 And import stylesheets manually:
 
 ```jsx
-import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+import 'antd/dist/react-ant.css'; // or 'antd/dist/react-ant.less'
 ```
 
 ### Use modularized antd
