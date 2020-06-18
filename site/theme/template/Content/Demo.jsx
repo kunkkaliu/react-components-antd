@@ -164,7 +164,7 @@ class Demo extends React.Component {
         'react@16.x/umd/react.development.js',
         'react-dom@16.x/umd/react-dom.development.js',
         'moment/min/moment-with-locales.js',
-        'antd@3.x/dist/antd-with-locales.js',
+        'antd@3.x/dist/react-ant-with-locales.js',
         'react-router-dom/umd/react-router-dom.min.js',
         'react-router@3.x/umd/ReactRouter.min.js',
       ]
