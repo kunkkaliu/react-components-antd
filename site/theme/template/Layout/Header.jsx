@@ -3,12 +3,9 @@ import PropTypes from 'prop-types';
 import { Link } from 'bisheng/router';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import classNames from 'classnames';
-import { Select, Menu, Row, Col, Icon, Popover, Input, Button, Badge } from 'antd';
+import { Menu, Row, Col, Icon, Popover, Input, Button } from 'antd';
 import Santa from './Santa';
 import * as utils from '../utils';
-import { version as antdVersion } from '../../../../package.json';
-
-const { Option } = Select;
 
 let docsearch;
 if (typeof window !== 'undefined') {
@@ -110,19 +107,8 @@ class Header extends React.Component {
     const menuMode = isMobile ? 'inline' : 'horizontal';
     const {
       location,
-      themeConfig,
       intl: { locale },
     } = this.props;
-    const docVersions = {
-      ...themeConfig.docNewVersions,
-      [antdVersion]: antdVersion,
-      ...themeConfig.docVersions,
-    };
-    const versionOptions = Object.keys(docVersions).map(version => (
-      <Option value={docVersions[version]} key={version}>
-        {version}
-      </Option>
-    ));
     const module = location.pathname
       .replace(/(^\/|\/$)/g, '')
       .split('/')
@@ -148,17 +134,6 @@ class Header extends React.Component {
       >
         <FormattedMessage id="app.header.lang" />
       </Button>,
-      <Select
-        key="version"
-        className="version"
-        size="small"
-        dropdownMatchSelectWidth={false}
-        defaultValue={antdVersion}
-        onChange={this.handleVersionChange}
-        getPopupContainer={trigger => trigger.parentNode}
-      >
-        {versionOptions}
-      </Select>,
       <Menu
         className="menu-site"
         mode={menuMode}
@@ -171,70 +146,11 @@ class Header extends React.Component {
             <FormattedMessage id="app.header.menu.home" />
           </Link>
         </Menu.Item>
-        <Menu.Item key="docs/spec">
-          <Link to={utils.getLocalizedPathname('/docs/spec/introduce', isZhCN)}>
-            <FormattedMessage id="app.header.menu.spec" />
-          </Link>
-        </Menu.Item>
         <Menu.Item key="docs/react">
           <Link to={utils.getLocalizedPathname('/docs/react/introduce', isZhCN)}>
             <FormattedMessage id="app.header.menu.components" />
           </Link>
         </Menu.Item>
-        <Menu.SubMenu
-          key="ecosystem"
-          className="hide-in-home-page"
-          title={
-            <Badge dot>
-              <FormattedMessage id="app.header.menu.ecosystem" />
-            </Badge>
-          }
-        >
-          <Menu.Item key="pro">
-            <a
-              href="http://pro.ant.design"
-              className="header-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Badge dot>
-                <FormattedMessage id="app.header.menu.pro.v4" />
-              </Badge>
-            </a>
-          </Menu.Item>
-          <Menu.Item key="ng">
-            <a
-              href="http://ng.ant.design"
-              className="header-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Ant Design of Angular
-            </a>
-          </Menu.Item>
-          <Menu.Item key="vue">
-            <a
-              href="http://vue.ant.design"
-              className="header-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Ant Design of Vue
-            </a>
-          </Menu.Item>
-          {isZhCN ? (
-            <Menu.Item key="course" className="hide-in-home-page">
-              <a
-                href="https://www.yuque.com/ant-design/course"
-                className="header-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Ant Design 实战教程
-              </a>
-            </Menu.Item>
-          ) : null}
-        </Menu.SubMenu>
       </Menu>,
     ];
 
@@ -261,10 +177,7 @@ class Header extends React.Component {
                 alt="logo"
                 src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
               />
-              <img
-                alt="Ant Design"
-                src="https://gw.alipayobjects.com/zos/rmsportal/DkKNubTaaVsKURhcVGkh.svg"
-              />
+              <span>React Ant</span>
               <Santa />
             </Link>
           </Col>

@@ -88,7 +88,7 @@ module.exports = {
     'app.footer.bug-report': '报告 Bug',
     'app.footer.issues': '讨论列表',
     'app.footer.version': '文档版本：',
-    'app.footer.author': '蚂蚁金服体验技术部出品 @ XTech',
+    'app.footer.author': 'IOT',
     'app.footer.work_with_us': '加入我们',
     'app.footer.more-product': '更多产品',
     'app.footer.company': 'XTech',

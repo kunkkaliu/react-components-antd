@@ -91,7 +91,7 @@ module.exports = {
     'app.footer.bug-report': 'Bug Report',
     'app.footer.issues': 'Issues',
     'app.footer.version': 'Version: ',
-    'app.footer.author': 'Created by XTech',
+    'app.footer.author': 'IOT',
     'app.footer.work_with_us': 'Work with Us',
     'app.footer.more-product': 'More Products',
     'app.footer.company': 'XTech',

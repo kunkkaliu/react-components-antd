@@ -73,6 +73,12 @@
     display: none;
   }
 
+  button.header-lang-button {
+    display: block;
+    margin: 29px auto 16px;
+    color: @text-color;
+    border-color: @text-color;
+  }
   div.version {
     display: block;
     margin: 29px auto 16px;
@@ -83,17 +89,14 @@
     div.version {
       margin: 16px auto;
     }
+    button.header-lang-button {
+      margin: 16px auto;
+      float: none;
+    }
     .ant-popover-inner {
       overflow: hidden;
       &-content {
         padding: 0;
-        .ant-select {
-          display: block;
-          width: 60%;
-        }
-        .ant-btn {
-          margin: 16px 8% 0 8px;
-        }
       }
     }
     #nav a.header-link {

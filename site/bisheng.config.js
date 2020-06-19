@@ -35,15 +35,6 @@ module.exports = {
   htmlTemplate: './site/theme/static/template.html',
   themeConfig: {
     categoryOrder: {
-      'Ant Design': 0,
-      原则: 1,
-      Principles: 1,
-      视觉: 2,
-      Visual: 2,
-      模式: 3,
-      Patterns: 3,
-      其他: 6,
-      Other: 6,
       Components: 100,
       组件: 100,
     },
@@ -65,17 +56,8 @@ module.exports = {
       其他: 6,
       废弃: 7,
     },
-    docVersions: {
-      '2.x': 'http://2x.ant.design',
-      '1.x': 'http://1x.ant.design',
-      '0.12.x': 'http://012x.ant.design',
-      '0.11.x': 'http://011x.ant.design',
-      '0.10.x': 'http://010x.ant.design',
-      '0.9.x': 'http://09x.ant.design',
-    },
-    docNewVersions: {
-      '4.x': 'https://ant.design',
-    },
+    docVersions: {},
+    docNewVersions: {},
   },
   filePathMapper(filePath) {
     if (filePath === '/index.html') {
@@ -98,9 +80,9 @@ module.exports = {
   webpackConfig(config) {
     // eslint-disable-next-line
     config.resolve.alias = {
-      'antd/lib': path.join(process.cwd(), 'components'),
-      'antd/es': path.join(process.cwd(), 'components'),
-      antd: path.join(process.cwd(), 'index'),
+      'react-ant/lib': path.join(process.cwd(), 'components'),
+      'react-ant/es': path.join(process.cwd(), 'components'),
+      'react-ant': path.join(process.cwd(), 'index'),
       site: path.join(process.cwd(), 'site'),
       'react-router': 'react-router/umd/ReactRouter',
       'react-intl': 'react-intl/dist',

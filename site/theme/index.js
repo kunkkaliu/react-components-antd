@@ -43,7 +43,6 @@ module.exports = {
       return null;
     },
     'docs/react': pickerGenerator('react'),
-    'docs/spec': pickerGenerator('spec'),
   },
   plugins: [
     'bisheng-plugin-description',

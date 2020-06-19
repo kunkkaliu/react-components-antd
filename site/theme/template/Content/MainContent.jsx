@@ -356,8 +356,8 @@ class MainContent extends Component {
                     </Tooltip>
                   )
                 }
-                repo="ant-design"
-                owner="ant-design"
+                repo="react-ant"
+                owner="kunkkaliu"
               />
             </section>
             <PrevAndNext prev={prev} next={next} />
