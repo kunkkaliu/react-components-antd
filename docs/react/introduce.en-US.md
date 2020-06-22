@@ -55,13 +55,13 @@ import 'react-components-antd/dist/react-components-antd.css'; // or 'react-comp
 
   ```jsx
   // import js and css modularly, parsed by babel-plugin-import
-  import { DatePicker } from 'react-components-antd';
+  import { Star } from 'react-components-antd';
   ```
 
 - Manually import
 
   ```jsx
-  import DatePicker from 'react-components-antd/es/date-picker'; // for js
-  import 'react-components-antd/es/date-picker/style/css'; // for css
-  // import 'react-components-antd/es/date-picker/style';         // that will import less
+  import Star from 'react-components-antd/es/star'; // for js
+  import 'react-components-antd/es/star/style/css'; // for css
+  // import 'react-components-antd/es/star/style';         // that will import less
   ```

@@ -61,13 +61,13 @@ import 'react-components-antd/dist/react-components-antd.css'; // or 'react-comp
 
   ```jsx
   // babel-plugin-import 会帮助你加载 JS 和 CSS
-  import { DatePicker } from 'react-components-antd';
+  import { Star } from 'react-components-antd';
   ```
 
 - 手动引入
 
   ```jsx
-  import DatePicker from 'react-components-antd/es/date-picker'; // 加载 JS
-  import 'react-components-antd/es/date-picker/style/css'; // 加载 CSS
-  // import 'react-components-antd/es/date-picker/style';         // 加载 LESS
+  import Star from 'react-components-antd/es/star'; // 加载 JS
+  import 'react-components-antd/es/star/style/css'; // 加载 CSS
+  // import 'react-components-antd/es/star/style';         // 加载 LESS
   ```

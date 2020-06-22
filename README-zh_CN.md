@@ -1,4 +1,4 @@
-<h1 align="center">React Ant</h1>
+<h1 align="center">React Components Antd</h1>
 
 [English](./README.md) | 简体中文
 

@@ -15,11 +15,11 @@
   ],
   "homepage": "http://ant.design/",
   "bugs": {
-    "url": "https://github.com/kunkkaliu/react-ant/issues"
+    "url": "https://github.com/kunkkaliu/react-components-antd/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kunkkaliu/react-ant"
+    "url": "https://github.com/kunkkaliu/react-components-antd"
   },
   "license": "MIT",
   "contributors": [
