@@ -1,14 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders ./components/star/demo/basic.md correctly 1`] = `
-<div>
-  <i
-    class="required-star"
-  >
-    *
-  </i>
-  <span>
-    姓名
-  </span>
-</div>
-`;
+exports[`renders ./components/star/demo/basic.md correctly 1`] = `null`;
