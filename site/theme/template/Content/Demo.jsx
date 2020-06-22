@@ -173,7 +173,7 @@ class Demo extends React.Component {
       js_pre_processor: 'typescript',
     };
     const riddlePrefillConfig = {
-      title: `${localizedTitle} - Ant Design Demo`,
+      title: `${localizedTitle} - React Components Antd Demo`,
       js: sourceCode.replace("'antd';", "'antd@3.x';"),
       css: prefillStyle.replace(" 'antd/", " 'antd@3.x/"),
     };

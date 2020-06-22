@@ -88,6 +88,7 @@ const eslintrc = {
     'jest/no-test-callback': 0,
     'jest/expect-expect': 0,
     'import/extensions': 0,
+    'import/no-unresolved': [0, { ignore: ['react-components-antd'] }],
   },
   globals: {
     gtag: true,
@@ -113,7 +114,7 @@ if (process.env.RUN_ENV === 'DEMO') {
     'react/no-multi-comp': 0,
     'jsx-a11y/href-no-hash': 0,
     'import/no-extraneous-dependencies': 0,
-    'import/no-unresolved': 0,
+    'import/no-unresolved': [0, { ignore: ['react-components-antd'] }],
     'jsx-a11y/control-has-associated-label': 0,
   });
 }

@@ -5,17 +5,17 @@ English | [简体中文](./README-zh_CN.md)
 ## 📦 Install
 
 ```bash
-npm install react-ant
+npm install react-components-antd
 ```
 
 ```bash
-yarn add react-ant
+yarn add react-components-antd
 ```
 
 ## 🔨 Usage
 
 ```jsx
-import { Star } from 'react-ant';
+import { Star } from 'react-components-antd';
 
 const App = () => (
   <>
@@ -28,7 +28,7 @@ const App = () => (
 And import style manually:
 
 ```jsx
-import 'react-ant/dist/react-ant.css'; // or 'react-ant/dist/react-ant.less'
+import 'react-components-antd/dist/react-components-antd.css'; // or 'react-components-antd/dist/react-components-antd.less'
 ```
 
 Or use [babel-plugin-import](https://ant.design/docs/react/getting-started#Import-on-Demand).

@@ -29,7 +29,7 @@ function finalizeCompile() {
     // eslint-disable-next-line
     console.log('Wrote version into lib/version/index.d.ts');
 
-    // Build a entry less file to dist/react-ant.less
+    // Build a entry less file to dist/react-components-antd.less
     const componentsPath = path.join(process.cwd(), 'components');
     let componentsLessContent = '';
     // Build components in one file: lib/style/components.less
@@ -49,14 +49,14 @@ function finalizeCompile() {
 
 function finalizeDist() {
   if (fs.existsSync(path.join(__dirname, './dist'))) {
-    // Build less entry file: dist/react-ant.less
+    // Build less entry file: dist/react-components-antd.less
     fs.writeFileSync(
-      path.join(process.cwd(), 'dist', 'react-ant.less'),
+      path.join(process.cwd(), 'dist', 'react-components-antd.less'),
       '@import "../lib/style/index.less";\n@import "../lib/style/components.less";',
     );
 
     // eslint-disable-next-line
-    console.log('Built a entry less file to dist/react-ant.less');
+    console.log('Built a entry less file to dist/react-components-antd.less');
   }
 }
 

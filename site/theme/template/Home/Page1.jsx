@@ -62,7 +62,7 @@ export default function Page1() {
               <span className="token punctuation">{'{'}</span> Star{' '}
               <span className="token punctuation">{'}'}</span>{' '}
               <span className="token keyword">from</span>{' '}
-              <span className="token string">react-ant</span>
+              <span className="token string">react-components-antd</span>
               <span className="token punctuation">;</span>
             </code>
           </pre>
@@ -70,7 +70,7 @@ export default function Page1() {
             <code>
               <span className="token keyword">import</span> Star{' '}
               <span className="token keyword">from</span>{' '}
-              <span className="token string">react-ant/lib/star</span>
+              <span className="token string">react-components-antd/lib/star</span>
               <span className="token punctuation">;</span>
             </code>
           </pre>

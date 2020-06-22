@@ -10,7 +10,7 @@ if (
 ) {
   // eslint-disable-next-line no-console
   console.warn(
-    'You are using a whole package of react-ant, ' +
+    'You are using a whole package of react-components-antd, ' +
       'please use https://www.npmjs.com/package/babel-plugin-import to reduce app bundle size.',
   );
 }

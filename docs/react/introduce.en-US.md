@@ -3,7 +3,7 @@ order: 0
 title: Introduction
 ---
 
-`react-ant` is a component library based on Ant Design.
+`react-components-antd` is a component library based on Ant Design.
 
 ---
 
@@ -14,11 +14,11 @@ title: Introduction
 **We recommend using npm or yarn to install**, it not only makes development easier, but also allow you to take advantage of the rich ecosystem of Javascript packages and tooling.
 
 ```bash
-$ npm install react-ant
+$ npm install react-components-antd
 ```
 
 ```bash
-$ yarn add react-ant
+$ yarn add react-components-antd
 ```
 
 If you are in a bad network environment, you can try other registries and tools like [cnpm](https://github.com/cnpm/cnpm).
@@ -26,19 +26,19 @@ If you are in a bad network environment, you can try other registries and tools 
 ## Usage
 
 ```jsx
-import { Star } from 'react-ant';
+import { Star } from 'react-components-antd';
 ReactDOM.render(<div><Star/><span>name</span><div/>, mountNode);
 ```
 
 And import stylesheets manually:
 
 ```jsx
-import 'react-ant/dist/react-ant.css'; // or 'react-ant/dist/react-ant.less'
+import 'react-components-antd/dist/react-components-antd.css'; // or 'react-components-antd/dist/react-components-antd.less'
 ```
 
 ### Use modularized antd
 
-> Note: react-ant support ES6 tree shaking by default even without the below plugin.
+> Note: react-components-antd support ES6 tree shaking by default even without the below plugin.
 
 - Use [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (Recommended)
 
@@ -46,7 +46,7 @@ import 'react-ant/dist/react-ant.css'; // or 'react-ant/dist/react-ant.less'
   // .babelrc or babel-loader option
   {
     "plugins": [
-      ["import", { "libraryName": "react-ant", "libraryDirectory": "es", "style": "css" }] // `style: true` for less
+      ["import", { "libraryName": "react-components-antd", "libraryDirectory": "es", "style": "css" }] // `style: true` for less
     ]
   }
   ```
@@ -55,13 +55,13 @@ import 'react-ant/dist/react-ant.css'; // or 'react-ant/dist/react-ant.less'
 
   ```jsx
   // import js and css modularly, parsed by babel-plugin-import
-  import { DatePicker } from 'react-ant';
+  import { DatePicker } from 'react-components-antd';
   ```
 
 - Manually import
 
   ```jsx
-  import DatePicker from 'react-ant/es/date-picker'; // for js
-  import 'react-ant/es/date-picker/style/css'; // for css
-  // import 'react-ant/es/date-picker/style';         // that will import less
+  import DatePicker from 'react-components-antd/es/date-picker'; // for js
+  import 'react-components-antd/es/date-picker/style/css'; // for css
+  // import 'react-components-antd/es/date-picker/style';         // that will import less
   ```

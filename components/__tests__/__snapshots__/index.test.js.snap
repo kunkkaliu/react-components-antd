@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`antd exports modules correctly 1`] = `
+exports[`react-components-antd exports modules correctly 1`] = `
 Array [
   "Star",
   "version",

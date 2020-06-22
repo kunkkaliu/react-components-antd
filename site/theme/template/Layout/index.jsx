@@ -30,7 +30,7 @@ if (typeof window !== 'undefined') {
   window.react = React;
   window['react-dom'] = ReactDOM;
   // eslint-disable-next-line global-require
-  window.antd = require('antd');
+  window['react-components-antd'] = require('react-components-antd');
 
   // Error log statistic
   window.addEventListener('error', function onError(e) {

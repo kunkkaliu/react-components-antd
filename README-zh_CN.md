@@ -5,17 +5,17 @@
 ## 📦 安装
 
 ```bash
-npm install react-ant --save
+npm install react-components-antd --save
 ```
 
 ```bash
-yarn add react-ant
+yarn add react-components-antd
 ```
 
 ## 🔨 示例
 
 ````jsx
-import { Star } from 'react-ant';
+import { Star } from 'react-components-antd';
 
 const App = () => (
   <>
@@ -26,7 +26,7 @@ const App = () => (
 引入样式：
 
 ```jsx
-import 'react-ant/dist/react-ant.css'; // or 'react-ant/dist/react-ant.less'
+import 'react-components-antd/dist/react-components-antd.css'; // or 'react-components-antd/dist/react-components-antd.less'
 ````
 
 你也可以使用 [babel-plugin-import](https://ant.design/docs/react/getting-started-cn#按需加载)。

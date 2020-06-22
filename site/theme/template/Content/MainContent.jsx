@@ -356,7 +356,7 @@ class MainContent extends Component {
                     </Tooltip>
                   )
                 }
-                repo="react-ant"
+                repo="react-components-antd"
                 owner="kunkkaliu"
               />
             </section>

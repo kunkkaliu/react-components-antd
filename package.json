@@ -1,5 +1,5 @@
 {
-  "name": "react-ant",
+  "name": "react-components-antd",
   "version": "0.0.1",
   "description": "An enterprise-class UI design language and React components implementation",
   "keywords": [
@@ -38,7 +38,7 @@
   ],
   "main": "lib/index.js",
   "module": "es/index.js",
-  "unpkg": "dist/react-ant.min.js",
+  "unpkg": "dist/react-components-antd.min.js",
   "typings": "lib/index.d.ts",
   "scripts": {
     "api-collection": "antd-tools run api-collection",
@@ -226,11 +226,11 @@
   },
   "bundlesize": [
     {
-      "path": "./dist/react-ant.min.js",
+      "path": "./dist/react-components-antd.min.js",
       "maxSize": "540 kB"
     },
     {
-      "path": "./dist/react-ant.min.css",
+      "path": "./dist/react-components-antd.min.css",
       "maxSize": "60 kB"
     }
   ],

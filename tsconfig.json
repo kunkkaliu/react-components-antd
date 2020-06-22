@@ -2,8 +2,8 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "react-ant": ["components/index.tsx"],
-      "react-ant/es/*": ["components/*"]
+      "react-components-antd": ["components/index.tsx"],
+      "react-components-antd/es/*": ["components/*"]
     },
     "strictNullChecks": true,
     "moduleResolution": "node",

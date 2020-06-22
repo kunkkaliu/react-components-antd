@@ -12,8 +12,8 @@ function ignoreMomentLocale(webpackConfig) {
 }
 
 function addLocales(webpackConfig) {
-  let packageName = 'react-ant-with-locales';
-  if (webpackConfig.entry['react-ant.min']) {
+  let packageName = 'react-components-antd-with-locales';
+  if (webpackConfig.entry['react-components-antd.min']) {
     packageName += '.min';
   }
   webpackConfig.entry[packageName] = './index-with-locales.js';
