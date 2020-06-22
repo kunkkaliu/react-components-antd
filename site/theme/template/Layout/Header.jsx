@@ -154,7 +154,7 @@ class Header extends React.Component {
       </Menu>,
     ];
 
-    const searchPlaceholder = locale === 'zh-CN' ? '在 ant.design 中搜索' : 'Search in ant.design';
+    const searchPlaceholder = locale === 'zh-CN' ? '在组件库中搜索' : 'Search in lib';
     return (
       <header id="header" className={headerClassName}>
         {isMobile && (
@@ -177,7 +177,7 @@ class Header extends React.Component {
                 alt="logo"
                 src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
               />
-              <span>React Ant</span>
+              <span>React Comps Antd</span>
               <Santa />
             </Link>
           </Col>

@@ -27,6 +27,13 @@ function getStyle() {
     .content-wrapper {
       padding: 40px;
     }
+    .markdown .toc {
+      background: #f2f4f5;
+      border-left: 2px solid #eee;
+    }
+    .toc .bisheng-toc-h2 {
+      width: auto;
+    }
   `;
 }
 
