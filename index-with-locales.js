@@ -1,12 +1,12 @@
-const antd = require('./components');
+const iotv = require('./components');
 
 const req = require.context('./components', true, /^\.\/locale\/.+_.+\.tsx$/);
 
-antd.locales = {};
+iotv.locales = {};
 
 req.keys().forEach(mod => {
   const matches = mod.match(/\/([^/]+).tsx$/);
-  antd.locales[matches[1]] = req(mod).default;
+  iotv.locales[matches[1]] = req(mod).default;
 });
 
-module.exports = antd;
+module.exports = iotv;

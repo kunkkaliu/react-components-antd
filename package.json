@@ -1,6 +1,6 @@
 {
   "name": "react-components-antd",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An enterprise-class UI design language and React components implementation",
   "keywords": [
     "ant",
@@ -234,5 +234,5 @@
       "maxSize": "60 kB"
     }
   ],
-  "title": "React Ant"
+  "title": "React Components Ant"
 }

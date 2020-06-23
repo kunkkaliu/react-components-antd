@@ -1,7 +1,7 @@
 const OLD_NODE_ENV = process.env.NODE_ENV;
 process.env.NODE_ENV = 'development';
 const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
-const antd = require('..');
+const iotv = require('..');
 
 describe('react-components-antd', () => {
   afterAll(() => {
@@ -9,7 +9,7 @@ describe('react-components-antd', () => {
   });
 
   it('exports modules correctly', () => {
-    expect(Object.keys(antd)).toMatchSnapshot();
+    expect(Object.keys(iotv)).toMatchSnapshot();
   });
 
   it('should hint when import all components in dev mode', () => {
