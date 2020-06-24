@@ -34,11 +34,11 @@ export default function Page1() {
           <pre className="language-bash">
             <code>
               $ <span className="token function">npm</span>{' '}
-              <span className="token function">install</span> react-components --save
+              <span className="token function">install</span> react-components-antd --save
             </code>
           </pre>
           <pre className="language-bash">
-            <code>$ yarn add react-components</code>
+            <code>$ yarn add react-components-antd</code>
           </pre>
           <h3 id="引入样式">
             <span>引入样式</span>
@@ -47,7 +47,8 @@ export default function Page1() {
             </a>
           </h3>
           <p>
-            在<code>react-components/dist</code> 目录下提供了 <code>react-components.less</code>等。
+            在<code>react-components-antd/dist</code> 目录下提供了{' '}
+            <code>react-components-antd.less</code>等。
           </p>
           <h3 id="按需加载">
             <span>按需加载</span>

@@ -14,15 +14,11 @@ function getStyle() {
     #header {
       padding: 0 24px;
     }
-    
     #header #logo {
       padding: 0;
     }
     #header .ant-row > div:last-child .header-lang-button {
       margin-right: 0;
-    }
-    .rc-footer-container {
-      padding: 0;
     }
     .content-wrapper {
       padding: 40px;

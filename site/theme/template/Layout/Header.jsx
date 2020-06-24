@@ -3,35 +3,12 @@ import PropTypes from 'prop-types';
 import { Link } from 'bisheng/router';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import classNames from 'classnames';
-import { Menu, Row, Col, Icon, Popover, Input, Button } from 'antd';
+import { Menu, Row, Col, Icon, Popover, Input, Button, AutoComplete } from 'antd';
 import Santa from './Santa';
 import * as utils from '../utils';
 
-let docsearch;
-if (typeof window !== 'undefined') {
-  docsearch = require('docsearch.js'); // eslint-disable-line
-}
-
-function initDocSearch(locale) {
-  if (!docsearch) {
-    return;
-  }
-  const lang = locale === 'zh-CN' ? 'cn' : 'en';
-  docsearch({
-    apiKey: '60ac2c1a7d26ab713757e4a081e133d0',
-    indexName: 'ant_design',
-    inputSelector: '#search-box input',
-    algoliaOptions: { facetFilters: [`tags:${lang}`] },
-    transformData(hits) {
-      hits.forEach(hit => {
-        hit.url = hit.url.replace('ant.design', window.location.host); // eslint-disable-line
-        hit.url = hit.url.replace('https:', window.location.protocol); // eslint-disable-line
-      });
-      return hits;
-    },
-    debug: false, // Set debug to true if you want to inspect the dropdown
-  });
-}
+const { Option } = AutoComplete;
+const searchEngine = 'Google';
 
 class Header extends React.Component {
   static contextTypes = {
@@ -40,11 +17,11 @@ class Header extends React.Component {
   };
 
   state = {
+    inputValue: '',
     menuVisible: false,
   };
 
   componentDidMount() {
-    const { intl } = this.props;
     const { router } = this.context;
     router.listen(this.handleHideMenu);
     const { searchInput } = this;
@@ -53,8 +30,27 @@ class Header extends React.Component {
         searchInput.focus();
       }
     });
-    initDocSearch(intl.locale);
   }
+
+  handleSearch = value => {
+    const { router } = this.context;
+    const { intl } = this.props;
+    this.setState(
+      {
+        inputValue: '',
+      },
+      () => {
+        router.push({ pathname: utils.getLocalizedPathname(`${value}/`, intl.locale === 'zh-CN') });
+        this.searchInput.blur();
+      },
+    );
+  };
+
+  handleInputChange = value => {
+    this.setState({
+      inputValue: value,
+    });
+  };
 
   handleShowMenu = () => {
     this.setState({
@@ -82,6 +78,11 @@ class Header extends React.Component {
       .replace(currentPathname, utils.getLocalizedPathname(currentPathname));
   };
 
+  handleSelectFilter = (value, option) => {
+    const optionValue = option.props['data-label'];
+    return optionValue === searchEngine || optionValue.indexOf(value.toLowerCase()) > -1;
+  };
+
   handleLangChange = () => {
     const {
       location: { pathname },
@@ -102,13 +103,15 @@ class Header extends React.Component {
   };
 
   render() {
-    const { menuVisible } = this.state;
+    const { inputValue, menuVisible } = this.state;
     const { isMobile } = this.context;
     const menuMode = isMobile ? 'inline' : 'horizontal';
     const {
       location,
+      picked,
       intl: { locale },
     } = this.props;
+    const { components } = picked;
     const module = location.pathname
       .replace(/(^\/|\/$)/g, '')
       .split('/')
@@ -119,6 +122,24 @@ class Header extends React.Component {
       activeMenuItem = 'docs/react';
     }
     const isZhCN = locale === 'zh-CN';
+    const excludedSuffix = isZhCN ? 'en-US.md' : 'zh-CN.md';
+    const options = components
+      .filter(({ meta }) => !meta.filename.endsWith(excludedSuffix))
+      .map(({ meta }) => {
+        const pathSnippet = meta.filename.split('/')[1];
+        const url = `/components/${pathSnippet}`;
+        const { subtitle } = meta;
+        return (
+          <Option
+            value={url}
+            key={url}
+            data-label={`${meta.title.toLowerCase()} ${subtitle || ''}`}
+          >
+            <strong>{meta.title}</strong>
+            {subtitle && <span className="ant-component-decs">{subtitle}</span>}
+          </Option>
+        );
+      });
 
     const headerClassName = classNames({
       clearfix: true,
@@ -184,12 +205,23 @@ class Header extends React.Component {
           <Col xxl={20} xl={19} lg={19} md={19} sm={0} xs={0}>
             <div id="search-box">
               <Icon type="search" />
-              <Input
-                ref={ref => {
-                  this.searchInput = ref;
-                }}
+              <AutoComplete
+                dataSource={options}
+                value={inputValue}
+                dropdownClassName="component-select"
                 placeholder={searchPlaceholder}
-              />
+                optionLabelProp="data-label"
+                filterOption={this.handleSelectFilter}
+                onSelect={this.handleSearch}
+                onSearch={this.handleInputChange}
+                getPopupContainer={trigger => trigger.parentNode}
+              >
+                <Input
+                  ref={ref => {
+                    this.searchInput = ref;
+                  }}
+                />
+              </AutoComplete>
             </div>
             {!isMobile && menu}
           </Col>
